@@ -1,0 +1,39 @@
+{
+    "name": "Push-EDX/flarum-ext-restricted-reply",
+    "description": "Realtime chat.",
+    "keywords": ["restricted-reply", "flarum", "pushedx", "Push-EDX"],
+    "type": "flarum-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Guillem Pascual",
+            "email": "blipi.tube@gmail.com",
+            "homepage": "http://pushedx.net"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/Push-EDX/flarum-ext-restricted-reply/issues",
+        "source": "https://github.com/Push-EDX/flarum-ext-restricted-reply"
+    },
+    "require": {
+        "flarum/core": "^0.1.0-beta.5"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Restricted Reply",
+            "icon": {
+                "image": "icon.png",
+                "backgroundSize": "75px 75px",
+                "backgroundPosition": "center",
+                "backgroundRepeat": "no-repeat",
+                "backgroundColor": "#244052",
+                "color": "#fff"
+            }
+        }
+    },
+    "autoload": {
+        "psr-4": {
+            "PushEDX\\Tags\\": "src/"
+        }
+    }
+}
