@@ -1,6 +1,6 @@
 {
     "name": "push-edx/flarum-ext-restricted-reply",
-    "description": "Realtime chat.",
+    "description": "Restrict reply to all tags (AND all permissions).",
     "keywords": ["restricted-reply", "flarum", "pushedx", "push-edx"],
     "type": "flarum-extension",
     "license": "MIT",
