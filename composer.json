@@ -1,7 +1,7 @@
 {
-    "name": "Push-EDX/flarum-ext-restricted-reply",
+    "name": "push-edx/flarum-ext-restricted-reply",
     "description": "Realtime chat.",
-    "keywords": ["restricted-reply", "flarum", "pushedx", "Push-EDX"],
+    "keywords": ["restricted-reply", "flarum", "pushedx", "push-edx"],
     "type": "flarum-extension",
     "license": "MIT",
     "authors": [
