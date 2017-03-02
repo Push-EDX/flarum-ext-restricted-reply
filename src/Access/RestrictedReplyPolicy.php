@@ -55,23 +55,21 @@ class RestrictedReplyPolicy extends AbstractPolicy
      * @param Discussion $discussion
      * @return bool
      */
-    public function before(User $actor, $ability, Discussion $discussion)
+    public function reply(User $actor, Discussion $discussion)
     {
-        if ($ability == "reply") {
-            // Wrap all discussion permission checks with some logic pertaining to
-            // the discussion's tags. If the discussion has a tag that has been
-            // restricted, and the user has this permission for that tag, then they
-            // are allowed. If the discussion only has tags that have been
-            // restricted, then the user *must* have permission for at least one of
-            // them.
-            $tags = $discussion->tags;
+        // Wrap all discussion permission checks with some logic pertaining to
+        // the discussion's tags. If the discussion has a tag that has been
+        // restricted, and the user has this permission for that tag, then they
+        // are allowed. If the discussion only has tags that have been
+        // restricted, then the user *must* have permission for at least one of
+        // them.
+        $tags = $discussion->tags;
 
-            if (count($tags)) {
-                foreach ($tags as $tag) {
-                    if ($tag->is_restricted) {
-                        if (!$actor->hasPermission('tag'.$tag->id.'.discussion.'.$ability)) {
-                            return false;
-                        }
+        if (count($tags)) {
+            foreach ($tags as $tag) {
+                if ($tag->is_restricted) {
+                    if (!$actor->hasPermission('tag'.$tag->id.'.discussion.'.$ability)) {
+                        return false;
                     }
                 }
             }
